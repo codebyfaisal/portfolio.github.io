@@ -1,7 +1,7 @@
 # My Personal Portfolio
 
 ## Preview
-![Website Preview img](images/preview.png)
+![Website Preview img](img/preview.png)
 
 ## Features
 
