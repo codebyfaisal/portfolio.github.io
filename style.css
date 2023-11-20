@@ -41,7 +41,6 @@ p {
 
 & ul {
   list-style: none;
-  display: flex;
 }
 
 /* * ------------ Theme ---------------- * */
@@ -49,6 +48,7 @@ p {
   --base-color: coral;
   --white-color: #fff;
   --base2-color: rgb(236, 90, 37);
+  --nav-bg-color: rgba(214, 133, 103, 0.274);
 }
 
 /* * ------------ Layout --------------- * */
@@ -72,6 +72,11 @@ p {
 .flex {
   display: flex;
 }
+
+#menu,
+#myCheck {
+  display: none;
+}
 /* * ------------ Module / Reusable ---- * */
 .btn {
   display: inline;
@@ -93,6 +98,8 @@ p {
 /* * ------------ States --------------- * */
 /***** Header / Hero Section *****/
 .hero-section {
+  overflow: hidden;
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -102,7 +109,7 @@ p {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  z-index: 1;
+  z-index: 999;
   position: relative;
 
   & .flex {
@@ -124,6 +131,7 @@ p {
 
 .nav-links {
   & ul {
+    display: flex;
     gap: 0 4rem;
 
     & li {
@@ -159,6 +167,8 @@ p {
 }
 
 .logo {
+  z-index: 990;
+
   & h1 {
     font-size: 3.4rem;
     color: var(--base-color);
@@ -262,6 +272,109 @@ p {
 /* * ------------ Pages ---------------- * */
 
 /* * ------------ Responsive ----------- * */
+@media (width <= 1000px) {
+  .container-10 {
+    padding: 1rem 3rem;
+  }
+}
+@media (width <= 850px) {
+  .navbar {
+    padding: 1rem 0 0 1rem;
+  }
+
+  .nav-links {
+    position: absolute;
+    z-index: 991;
+    width: 100%;
+    max-width: 350px;
+    height: 100%;
+    top: 0;
+    right: -100%;
+    background-color: var(--nav-bg-color);
+    transition: all 0.3s ease-in-out;
+
+    & ul {
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+      transform: translateY(90%);
+      letter-spacing: 0.2rem;
+
+      & li {
+        background-color: black;
+        width: 14rem;
+        padding: 1rem 9rem;
+        display: flex;
+        justify-content: center;
+      }
+    }
+
+    & a {
+      font-size: 2rem;
+      font-weight: 600;
+
+      &::before {
+        height: 3px;
+        left: -200%;
+      }
+    }
+  }
+
+  #menu {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 992;
+    cursor: pointer;
+
+    & i {
+      position: absolute;
+      top: 0;
+      right: 0;
+      font-size: 3rem;
+      margin: 2rem;
+      color: var(--base-color);
+    }
+  }
+  #menu .fa-x {
+    display: none;
+  }
+  #myCheck:checked ~ .nav-links {
+    right: 0;
+  }
+  #myCheck:checked ~ #menu .fa-bars {
+    display: none;
+  }
+  #myCheck:checked ~ #menu .fa-x {
+    display: block;
+  }
+}
+@media (width <= 460px) {
+  html {
+    font-size: 55%;
+  }
+}
+@media (width <= 400px) {
+  html {
+    font-size: 45%;
+  }
+
+  .nav-links {
+    & a {
+      font-size: calc(2rem + 60%);
+    }
+  }
+}
+@media (width <= 320px) {
+  html {
+    font-size: 40%;
+  }
+
+  .nav-links a {
+    font-size: calc(2rem + 100%);
+  }
+}
 
 /* * ------------ Keyframes ------------ * */
 @keyframes revealText {
