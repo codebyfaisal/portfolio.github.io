@@ -48,7 +48,7 @@ p {
 :root {
   --base-color: coral;
   --white-color: #fff;
-  --base3-color: #263238;
+  --base2-color: rgb(236, 90, 37);
 }
 
 /* * ------------ Layout --------------- * */
@@ -118,7 +118,7 @@ p {
     height: 100%;
     opacity: 0.7;
     z-index: -1;
-    background-color: rgb(42, 51, 48);
+    background-color: rgb(22, 26, 24);
   }
 }
 
@@ -139,7 +139,7 @@ p {
 
     &::before {
       content: " ";
-      background-color: var(--base-color);
+      background-color: var(--base2-color);
       position: absolute;
       width: 100%;
       height: 2px;
@@ -227,30 +227,34 @@ p {
     margin: 1rem;
     margin-left: 0;
     overflow: hidden;
+    opacity: 0;
+    animation: fadeText 1s ease-in-out 1s forwards;
 
     &::after {
       content: " ";
       position: absolute;
       top: 0;
-      right: 0%;
+      right: 0;
       width: 100%;
       height: 100%;
       background-color: var(--base-color);
-      
-      animation-name: text-top-color;
-      animation-duration: 1.7s;
-      animation-timing-function: ease-in-out;
+      animation: revealText 1s ease-in-out 1s forwards;
     }
   }
 
+  & h5,
   & h5::after {
     animation-delay: 0s;
   }
+  & h2,
   & h2::after {
     animation-delay: 1s;
+    color: var(--base-color);
   }
+  & h1,
   & h1::after {
     animation-delay: 2s;
+    line-height: 5.6rem;
   }
 }
 
@@ -260,15 +264,19 @@ p {
 /* * ------------ Responsive ----------- * */
 
 /* * ------------ Keyframes ------------ * */
-@keyframes text-top-color {
+@keyframes revealText {
   0% {
     right: 0%;
   }
-  80% {
-    right: -100%;
-    display: none;
-  }
   100% {
-    display: none;
+    right: -100%;
+  }
+}
+@keyframes fadeText {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
