@@ -140,7 +140,7 @@ p {
   }
 
   & a {
-    font-size: 1.8rem;
+    font-size: 2rem;
     color: var(--white-color);
     position: relative;
     transition: all 0.2s ease-in-out;
@@ -171,10 +171,10 @@ p {
 
   & h1 {
     font-size: 3.4rem;
-    color: var(--base-color);
+    color: var(--white-color);
   }
   & span {
-    color: var(--white-color);
+    color: var(--base-color);
   }
 }
 
