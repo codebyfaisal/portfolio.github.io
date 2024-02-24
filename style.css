@@ -27,8 +27,24 @@ body {
   padding: 0 0 0 1.5rem;
 }
 /* * ------------ Module / Reusable ---- * */
+.main-btn {
+  background-color: darkcyan;
+  color: white;
+  text-decoration: none;
+  width: max-content;
+  padding: 0.7rem 1rem;
+  font-weight: 600;
+  border-radius: 0.5rem;
 
+  &:hover {
+    background-color: #cacaca;
+    background: transparent;
+    outline: 2px solid darkcyan;
+  }
+}
 /* * ------------ States --------------- * */
+
+/***** Navbar Section *****/
 nav {
   display: flex;
   align-items: center;
@@ -86,21 +102,23 @@ nav {
 }
 
 .menu {
-  font-size: 2rem;
+  font-size: 2.5rem;
   color: white;
   position: relative;
+  visibility: hidden;
 
   & i {
     position: absolute;
     transform: translateY(-0.9rem);
   }
 }
+/***** End Navbar Section *****/
 
+/***** Header Section *****/
 header {
   height: 85vh;
   display: flex;
   justify-content: space-evenly;
-  flex-wrap: wrap;
   align-items: center;
   position: relative;
 }
@@ -142,7 +160,6 @@ header {
 
 .profile-pic {
   width: 30rem;
-  min-width: 25rem;
   background: linear-gradient(100deg, transparent 50%, darkcyan);
   border-radius: 50%;
   padding: 0.9rem;
@@ -155,11 +172,10 @@ header {
 .profile .buttons {
   display: flex;
   gap: 3rem;
-  /* border: 1px solid red; */
 
   & button {
     font-size: 2rem;
-    font-weight: 400;
+    font-weight: 500;
     padding: 1rem;
     letter-spacing: 0.5px;
     outline: none;
@@ -176,7 +192,7 @@ header {
 
     &:hover {
       background-color: chocolate;
-      color: black;
+      color: #333;
     }
   }
 
@@ -209,18 +225,105 @@ header {
     }
   }
 }
+/***** End Header Section *****/
+
+/***** About Section *****/
+
+.about-me {
+  display: none;
+  position: absolute;
+  top: 0;
+  transform: translate(22%, 14%);
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+  background-color: #333;
+  color: whitesmoke;
+  font-weight: 300;
+  text-align: justify;
+  width: 70vw;
+  padding: 4rem 4.5rem 5rem;
+  border-radius: 1rem;
+  transition: all 2s ease-in-out;
+
+  & dl {
+    display: grid;
+    gap: 1rem;
+  }
+}
+/***** End About Section *****/
+
+/***** footer Section *****/
+footer {
+  display: grid;
+  place-items: center;
+  font-size: 1.8rem;
+  color: #cacaca;
+  position: relative;
+  bottom: 0;
+}
+/***** End footer Section *****/
 
 /* * ------------ Responsive ----------- * */
 
 /* * ------------ Keyframes ------------ * */
-/* @keyframes profile-bg {
-  0% {
-    background: linear-gradient(140deg, transparent 50%, darkcyan 50%);
+@media (max-width: 950px) {
+  nav {
+    position: relative;
+
+    & .logo {
+      width: 100%;
+      font-size: 2.6rem;
+      text-align: center;
+    }
+
+    & .navbar {
+      & ul {
+        position: absolute;
+        position: fixed;
+        right: -100%;
+        transition: all 0.5s ease-in-out;
+        background-color: rgb(0, 68, 68);
+        width: 100%;
+        padding: 10rem;
+        height: 100vh;
+        z-index: 1;
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+    & .navbar a {
+      background-color: lightcyan;
+      color: rgb(0, 0, 0);
+      display: block;
+      width: 20rem;
+      padding: 1rem;
+      border-radius: 0.3rem;
+      text-align: center;
+      font-weight: 600;
+    }
   }
-  50% {
-    background: linear-gradient(200deg, transparent 50%, darkcyan 50%);
+
+  .menu {
+    visibility: visible;
+    z-index: 1;
+    position: absolute;
+    top: 35%;
+    right: 6%;
   }
-  100% {
-    background: linear-gradient(300deg, transparent 50%, darkcyan 50%);
+
+  header {
+    margin-top: 10rem;
+    flex-direction: column;
+
+    & .profile {
+      order: 2;
+    }
+
+    & .profile-pic {
+      order: 1;
+      width: 25rem;
+      margin-bottom: 3rem;
+    }
   }
-} */
+}
