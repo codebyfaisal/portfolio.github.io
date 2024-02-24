@@ -1,395 +1,226 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Stylish&family=Urbanist:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 /* * ------------ Base line ------------ * */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-html {
-  font-size: 62.5%;
   font-family: "Poppins", sans-serif;
-  scroll-behavior: smooth;
-}
-:is(h1, h2, h3, h4, h5, h6) {
-  text-transform: uppercase;
-}
-h1 {
-  font-size: 3.2rem;
-}
-h2 {
-  font-size: 2.4rem;
-}
-h3 {
-  font-size: 1.872rem;
-}
-h4 {
-  font-size: 1.6rem;
-}
-h5 {
-  font-size: 1.328rem;
-}
-h6 {
-  font-size: 1.072rem;
 }
 
-a,
-p {
-  font-size: 1.6rem;
-  text-decoration: none;
+html {
+  font-size: 62%;
 }
 
-& ul {
-  list-style: none;
+body {
+  background-color: #212525;
 }
 
 /* * ------------ Theme ---------------- * */
-:root {
-  --base-color: coral;
-  --white-color: #fff;
-  --base2-color: rgb(236, 90, 37);
-  --nav-bg-color: rgba(214, 133, 103, 0.274);
-}
 
 /* * ------------ Layout --------------- * */
 .container {
-  padding: 1rem 5rem;
-}
-.container-8 {
-  padding: 1rem 8rem;
-}
-.container-10 {
-  padding: 1rem 10rem;
+  padding: 1.5rem 6rem;
 }
 
-.grid {
-  display: grid;
-}
-.grid-two-cols {
-  grid-template-columns: repeat(2, 1fr);
-}
-
-.flex {
-  display: flex;
-}
-
-#menu,
-#myCheck {
-  display: none;
+.p-1 {
+  padding: 0 0 0 1.5rem;
 }
 /* * ------------ Module / Reusable ---- * */
-.btn {
-  display: inline;
 
-  & a {
-    padding: 1rem 4rem;
-    color: white;
-    font-size: 3rem;
-    text-transform: uppercase;
-    border: 2px solid var(--base-color);
-    transition: all 0.2s ease-in-out;
-    font-weight: 600;
-
-    &:hover {
-      background: var(--base-color);
-    }
-  }
-}
 /* * ------------ States --------------- * */
-/***** Header / Hero Section *****/
-.hero-section {
-  overflow: hidden;
-  position: relative;
+nav {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 100%;
-  height: 100vh;
-  background-image: url(img/hero-bg.jpg);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  z-index: 999;
-  position: relative;
-
-  & .flex {
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  &::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0.7;
-    z-index: -1;
-    background-color: rgb(22, 26, 24);
-  }
-}
-
-.nav-links {
-  & ul {
-    display: flex;
-    gap: 0 4rem;
-
-    & li {
-      overflow-x: hidden;
-    }
-  }
-
-  & a {
-    font-size: 2rem;
-    color: var(--white-color);
-    position: relative;
-    transition: all 0.2s ease-in-out;
-
-    &::before {
-      content: " ";
-      background-color: var(--base2-color);
-      position: absolute;
-      width: 100%;
-      height: 2px;
-      left: -100%;
-      bottom: 0;
-      transition: all 0.2s ease-in-out;
-    }
-
-    &:hover {
-      color: var(--base-color);
-
-      &::before {
-        left: 0;
-      }
-    }
-  }
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
 }
 
 .logo {
-  z-index: 990;
+  color: white;
+  font-size: 2rem;
 
-  & h1 {
-    font-size: 3.4rem;
-    color: var(--white-color);
-  }
   & span {
-    color: var(--base-color);
+    color: darkturquoise;
   }
 }
 
-.hero-content-box {
-  width: 100%;
-  height: 100%;
-  display: grid;
-  place-items: center;
-
-  & * {
-    color: var(--white-color);
-  }
-
-  & .content-box {
-    display: grid;
-    gap: 3rem;
-
-    & .text {
-      display: flex;
-      flex-direction: column;
-
-      & h5 {
-        font-size: 2rem;
-      }
-      & h2 {
-        font-size: 3.4rem;
-      }
-      & h1 {
-        font-size: 6.5rem;
-      }
-    }
-  }
-
-  & .social-icons {
+.navbar {
+  & ul {
     display: flex;
-
-    & a {
-      font-size: 2.3rem;
-      color: black;
-      width: 4rem;
-      height: 4rem;
-      display: grid;
-      place-items: center;
-      margin-right: 2rem;
-      border-radius: 50%;
-      box-shadow: inset 0 0 2px 0 white;
-      transition: all 0.2s ease-in-out;
-
-      &:hover {
-        scale: 1.13;
-        box-shadow: inset 0 0 0.8rem 0 cornflowerblue;
-      }
-    }
+    gap: 2rem 4rem;
+    list-style: none;
+    font-size: 2rem;
   }
-}
-.hero-content-box .content-box {
-  :is(h1, h2, h5) {
-    position: relative;
-    width: max-content;
-    margin: 1rem;
-    margin-left: 0;
+
+  & li {
     overflow: hidden;
-    opacity: 0;
-    animation: fadeText 1s ease-in-out 1s forwards;
+  }
 
-    &::after {
+  & a {
+    text-decoration: none;
+    color: white;
+    position: relative;
+    transition: all 0.2s ease-in-out;
+
+    &#active::after {
       content: " ";
-      position: absolute;
-      top: 0;
-      right: 0;
       width: 100%;
-      height: 100%;
-      background-color: var(--base-color);
-      animation: revealText 1s ease-in-out 1s forwards;
+      border-bottom: 2px solid darkcyan;
+      position: absolute;
+      bottom: 0;
+      left: -100%;
+      color: white;
+      transition: all 0.2s ease-in-out;
+    }
+
+    &#active:hover::after {
+      left: 0;
+    }
+
+    &:hover {
+      color: rgb(7, 173, 173);
+    }
+  }
+}
+
+.menu {
+  font-size: 2rem;
+  color: white;
+  position: relative;
+
+  & i {
+    position: absolute;
+    transform: translateY(-0.9rem);
+  }
+}
+
+header {
+  height: 85vh;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  align-items: center;
+  position: relative;
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  position: relative;
+
+  & .profession {
+    width: max-content;
+    background-color: black;
+    color: aliceblue;
+    padding: 1rem 1.5rem;
+    border-radius: 4rem;
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
+      rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
+      rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset,
+      rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
+      rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
+      rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  }
+
+  .name {
+    font-size: 2.5rem;
+    margin-top: 3rem;
+    line-height: 4.5rem;
+    color: white;
+
+    & h3 {
+      font-size: 2.2rem;
+      position: absolute;
+      top: 7rem;
+      color: darkcyan;
+    }
+  }
+}
+
+.profile-pic {
+  width: 30rem;
+  min-width: 25rem;
+  background: linear-gradient(100deg, transparent 50%, darkcyan);
+  border-radius: 50%;
+  padding: 0.9rem;
+
+  & img {
+    border-radius: 50%;
+  }
+}
+
+.profile .buttons {
+  display: flex;
+  gap: 3rem;
+  /* border: 1px solid red; */
+
+  & button {
+    font-size: 2rem;
+    font-weight: 400;
+    padding: 1rem;
+    letter-spacing: 0.5px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease-in-out;
+  }
+
+  & .my-cv {
+    background-color: #333;
+    color: white;
+    box-shadow: 0 0 1px 1px #333;
+
+    &:hover {
+      background-color: chocolate;
+      color: black;
     }
   }
 
-  & h5,
-  & h5::after {
-    animation-delay: 0s;
-  }
-  & h2,
-  & h2::after {
-    animation-delay: 1s;
-    color: var(--base-color);
-  }
-  & h1,
-  & h1::after {
-    animation-delay: 2s;
-    line-height: 5.6rem;
+  & .hire-me {
+    background-color: darkcyan;
+    color: white;
+    box-shadow: 0 0 1px 0 darkcyan;
+
+    &:hover {
+      background-color: #cacaca;
+      color: rgb(5, 139, 139);
+    }
   }
 }
 
-/***** End Hero Section *****/
-/* * ------------ Pages ---------------- * */
-
-/* * ------------ Responsive ----------- * */
-@media (width <= 1000px) {
-  .container-10 {
-    padding: 1rem 3rem;
-  }
-}
-@media (width <= 850px) {
-  .navbar {
-    padding: 1rem 0 0 1rem;
+.profile-icons {
+  ul {
+    padding-left: 1.2rem;
+    display: flex;
+    gap: 1rem;
+    list-style: none;
   }
 
-  .nav-links {
-    position: absolute;
-    z-index: 991;
-    width: 100%;
-    max-width: 350px;
-    height: 100%;
-    top: 0;
-    right: -100%;
-    background-color: var(--nav-bg-color);
+  & img {
+    width: 3.5rem;
     transition: all 0.3s ease-in-out;
 
-    & ul {
-      flex-direction: column;
-      align-items: center;
-      gap: 2rem;
-      transform: translateY(90%);
-      letter-spacing: 0.2rem;
-
-      & li {
-        background-color: black;
-        width: 14rem;
-        padding: 1rem 9rem;
-        display: flex;
-        justify-content: center;
-      }
-    }
-
-    & a {
-      font-size: 2rem;
-      font-weight: 600;
-
-      &::before {
-        height: 3px;
-        left: -200%;
-      }
-    }
-  }
-
-  #menu {
-    display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 992;
-    cursor: pointer;
-
-    & i {
-      position: absolute;
-      top: 0;
-      right: 0;
-      font-size: 3rem;
-      margin: 2rem;
-      color: var(--base-color);
-    }
-  }
-  #menu .fa-x {
-    display: none;
-  }
-  #myCheck:checked ~ .nav-links {
-    right: 0;
-  }
-  #myCheck:checked ~ #menu .fa-bars {
-    display: none;
-  }
-  #myCheck:checked ~ #menu .fa-x {
-    display: block;
-  }
-}
-@media (width <= 460px) {
-  html {
-    font-size: 55%;
-  }
-}
-@media (width <= 400px) {
-  html {
-    font-size: 45%;
-  }
-
-  .nav-links {
-    & a {
-      font-size: calc(2rem + 60%);
+    &:hover {
+      transform: scale(1.2) translateY(-0.5rem);
     }
   }
 }
-@media (width <= 320px) {
-  html {
-    font-size: 40%;
-  }
 
-  .nav-links a {
-    font-size: calc(2rem + 100%);
-  }
-}
+/* * ------------ Responsive ----------- * */
 
 /* * ------------ Keyframes ------------ * */
-@keyframes revealText {
+/* @keyframes profile-bg {
   0% {
-    right: 0%;
+    background: linear-gradient(140deg, transparent 50%, darkcyan 50%);
+  }
+  50% {
+    background: linear-gradient(200deg, transparent 50%, darkcyan 50%);
   }
   100% {
-    right: -100%;
+    background: linear-gradient(300deg, transparent 50%, darkcyan 50%);
   }
-}
-@keyframes fadeText {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
+} */

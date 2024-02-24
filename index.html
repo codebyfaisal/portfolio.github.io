@@ -3,62 +3,88 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <title>codebyfaisal</title>
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+    <title>Portfolio</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-
   <body>
-    <header class="hero-section">
-      <div class="container-10 navbar flex">
-        <div class="logo">
-          <a href="index.html">
-            <h1>code&nbsp;<span>by</span>&nbsp;faisal</h1>
-          </a>
+    <!-- ========== Start Navbar Section ========== -->
+    <nav class="container">
+      <div class="logo">
+        <h1>code<span>by</span>faisal</h1>
+      </div>
+      <div class="navbar">
+        <ul>
+          <li><a href="./index.html" id="active">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="menu">
+        <i class="fa-solid fa-bars"></i>
+        <i class="fa-brands fa-xing"></i>
+      </div>
+    </nav>
+    <!-- ========== End Navbar Section ========== -->
+
+    <!-- ========== Start Header Section ========== -->
+    <header class="container">
+      <div class="profile">
+        <div class="profession">
+          <h1>Front End Developer</h1>
         </div>
-        <input type="checkbox" id="myCheck" />
-        <label for="myCheck" id="menu">
-          <i class="fa-solid fa-x"></i>
-          <i class="fa-solid fa-bars"></i>
-        </label>
-        <div class="nav-links">
+        <div class="name p-1">
+          <h3>Hello, I'm</h3>
+          <h1>Muhammad Faisal</h1>
+        </div>
+        <div class="buttons p-1">
+          <button class="my-cv">Download CV</button>
+          <button class="hire-me">Hire Me Know</button>
+        </div>
+        <div class="profile-icons">
           <ul>
-            <li><a href="">Home</a></li>
-            <li><a href="">Projects</a></li>
-            <li><a href="">About</a></li>
-            <li><a href="">Contact</a></li>
+            <li>
+              <a href=""><img src="./images/linkedin.png" /></a>
+            </li>
+            <li>
+              <a href=""><img src="./images/github.png" /></a>
+            </li>
+            <li>
+              <a href=""><img src="./images/twitter.png" /></a>
+            </li>
+            <li>
+              <a href=""><img src="./images/facebook.png" /></a>
+            </li>
           </ul>
         </div>
       </div>
-      <div class="hero-content-box">
-        <div class="content-box">
-          <div class="text">
-            <div>
-              <h5>As-salamu alaykum!</h5>
-              <h2>muhammad faisal</h2>
-            </div>
-            <h1>web<br />&nbsp;&nbsp;&nbsp;developer</h1>
-          </div>
-          <div class="btn">
-            <a href="" type="button">cv here</a>
-          </div>
-          <div class="social-icons">
-            <a href=""><i class="fa-brands fa-linkedin-in"></i></a>
-            <a href=""><i class="fa-brands fa-github"></i></a>
-            <a href=""><i class="fa-brands fa-facebook"></i></a>
-          </div>
-        </div>
+      <div class="profile-pic">
+        <img
+          src="./images/profile.jpg"
+          alt="Muhammad Faisal Picture"
+          width="100%"
+          height="100%"
+        />
       </div>
     </header>
+    <!-- ========== End Header Section ========== -->
 
+    <main></main>
+
+    <!-- ========== Start Footer Section ========== -->
+    <footer>
+      <div class="cpr">
+        <p>Copyright 2024 Muhammad Faisal. All Rights Reserved</p>
+      </div>
+    </footer>
+    <!-- ========== End Footer Section ========== -->
+
+    <!-- ========== Script ========== -->
+    <script
+      src="https://kit.fontawesome.com/db93faee3d.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="script.js"></script>
   </body>
-  <script src="script.js"></script>
 </html>
